@@ -17,23 +17,19 @@ conn.autocommit = True
 cursor = conn.cursor()
 
 #Preparing query to create a database
+#def create_database_and_table():
+#  create_table='CREATE TABLE IF NOT EXISTS currencies (data VARCHAR(255), id VARCHAR(255), numcode VARCHAR(255), charcode VARCHAR(255), nominal VARCHAR(255), name VARCHAR(255), value VARCHAR(255))';
+#  cursor.execute(create_table)
+#  print("Table created successfully........")
 def create_database_and_table():
+  delete_table='DROP TABLE IF EXISTS currencies';
   create_table='CREATE TABLE IF NOT EXISTS currencies (data VARCHAR(255), id VARCHAR(255), numcode VARCHAR(255), charcode VARCHAR(255), nominal VARCHAR(255), name VARCHAR(255), value VARCHAR(255))';
+  cursor.execute(delete_table)
   cursor.execute(create_table)
   print("Table created successfully........")
 
 
 
-
-#Closing the connection
-#conn.close()
-#Preparing query to create a database
-#def create_database_and_table():
- # delete_table='DROP TABLE IF EXISTS currencies';
- # create_table='CREATE TABLE IF NOT EXISTS currencies (data VARCHAR(255), id VARCHAR(255), numcode VARCHAR(255), charcode VARCHAR(255), nominal VARCHAR(255), name VARCHAR(255), value VARCHAR(255))';
- # cursor.execute(delete_table)
- # cursor.execute(create_table)
- # print("Table created successfully........")
 
 
 

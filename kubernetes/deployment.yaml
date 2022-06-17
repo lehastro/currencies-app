@@ -1,0 +1,46 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: currencies-app-backend
+  labels:
+    app: currencies-app-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: currencies-app-backend
+  template:
+    metadata:
+      labels:
+        app: currencies-app-backend
+    spec:
+      containers:
+      - name: currencies-app-backend
+        image: lehastro/currencies-app-backend
+        ports:
+        - containerPort: 5000
+
+
+#---
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: jenkins
+#  labels:
+#    app: jenkins
+#spec:
+#  replicas: 2
+#  selector:
+#    matchLabels:
+#      app: jenkins
+#  template:
+#    metadata:
+#      labels:
+#        app: jenkins
+#    spec:
+#      containers:
+#      - name: jenkins
+#        image: jenkins/jenkins
+#        ports:
+#        - containerPort: 50000

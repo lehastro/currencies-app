@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class='my_table'>
+<h1>{% block title %} Выберите дату {% endblock %}</h1>
+<form action="{{ url_for('page') }}" method="POST">
+<p><select name="data">
+    {% for data in data %}
+      <option {% if data== data %}selected{% endif %}
+              value="{{ data [0] }}">{{ data [0] }}</option>
+
+    {% endfor %}
+
+</select></p>
+    <p><input type="submit" value="Отправить"></p>
+</form>
+    <form method="post" action="/update">
+        <button type="submit">Обновить данные в базе</button>
+    </form>
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Currencies {% endblock %}</h1>
+{% for my_table in my_table %}
+<div class='my_table'>
+    <h3> {{ my_table[5] }}</h3>
+    <i><p>ID - {{ my_table[1] }} </p></i>
+    <i><p>NUMCODE - {{ my_table[2] }} </p></i>
+    <i><p>CHARCODE - {{ my_table[3] }}</p></i>
+    <i><p>NOMINAL - {{ my_table[4] }}</p></i>
+    <i><p>VALUE - {{ my_table[6] }}</p></i>
+</div>
+{% endfor %}
+{% endblock %}
+

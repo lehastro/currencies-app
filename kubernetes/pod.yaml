@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: currencies-app-backend
+spec:
+  containers:
+  - image: lehastro/currencies-app-backend
+    name: currencies-app-backend

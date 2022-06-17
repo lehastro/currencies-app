@@ -2,7 +2,7 @@ import db
 import psycopg
 from func_Days_less10 import func_Days_less10
 from func_for_days_more_than_10 import func_for_days_more_than_10
-from models import cursor
+from db import cursor
 from flask import Flask, render_template, request, redirect, url_for
 
 db.create_database_and_table()
@@ -16,7 +16,7 @@ conn = psycopg.connect(
     port=6432
     dbname=postgresql
     user=postgresql
-    password=<password>
+    password=12345678
     target_session_attrs=read-write
     sslmode=verify-full
 """)
@@ -46,7 +46,7 @@ def page():
 
 @app.route('/update', methods=['POST'])
 def update():
-  models.create_database_and_table()
+  db.create_database_and_table()
   func_Days_less10()
   func_for_days_more_than_10()
   return redirect(url_for('spisok'))

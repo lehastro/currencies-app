@@ -22,6 +22,30 @@ spec:
         - containerPort: 5000
 
 
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sonarqube
+  labels:
+    app: sonarqube
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sonarqube
+  template:
+    metadata:
+      labels:
+        app: sonarqube
+    spec:
+      containers:
+      - name: sonarqube
+        image: sonarqube
+        ports:
+        - containerPort: 9000
 #---
 #apiVersion: apps/v1
 #kind: Deployment

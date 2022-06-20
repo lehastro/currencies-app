@@ -39,7 +39,7 @@ metadata:
   name: sonarqube
 spec:
   ports:
-  - port: 80
+  - port: 9000
     name: sonarqube
     targetPort: 9000
   selector:

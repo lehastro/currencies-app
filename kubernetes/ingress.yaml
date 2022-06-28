@@ -33,21 +33,4 @@ spec:
 
 
 
-#apiVersion: networking.k8s.io/v1
-#kind: Ingress
-#metadata:
-#  name: ingress-currencies-app-backend
-#  annotations:
-#    kubernetes.io/ingress.class: "nginx"
-#spec:
-#  rules:
-#  - http:
-#      paths:
-#      - path: "/web"
-#        pathType: Prefix
-#        backend:
-#          service:
-#             name: web
-#             port:
-#                number: 80
 
